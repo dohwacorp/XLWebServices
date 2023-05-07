@@ -62,7 +62,7 @@ public class PluginController : ControllerBase
         
         if (isDip17)
         {
-            const string githubPath = "https://raw.githubusercontent.com/goatcorp/PluginDistD17/{0}/{1}/{2}/latest.zip";
+            const string githubPath = "https://raw.githubusercontent.com/dohwacorp/PluginDistD17/{0}/{1}/{2}/latest.zip";
             var folder = isTesting ? "testing-live" : "stable";
             var version = isTesting && manifest.TestingAssemblyVersion != null ? manifest.TestingAssemblyVersion : manifest.AssemblyVersion;
             var cachedFile = await this.cache.CacheFile(internalName, $"{version}-{folder}-{this.pluginData.Get()!.RepoShaDip17}",
@@ -72,7 +72,7 @@ public class PluginController : ControllerBase
         }
         else
         {
-            const string githubPath = "https://raw.githubusercontent.com/goatcorp/DalamudPlugins/{0}/{1}/{2}/latest.zip";
+            const string githubPath = "https://raw.githubusercontent.com/dohwacorp/DalamudPlugins/{0}/{1}/{2}/latest.zip";
             var folder = isTesting ? "testing" : "plugins";
             var version = isTesting && manifest.TestingAssemblyVersion != null ? manifest.TestingAssemblyVersion : manifest.AssemblyVersion;
             var cachedFile = await this.cache.CacheFile(internalName, $"{version}-{folder}-{this.pluginData.Get()!.RepoSha}",
