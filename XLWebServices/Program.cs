@@ -45,7 +45,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("GithubAccess",
         policy =>
         {
-            policy.WithOrigins("https://goatcorp.github.io", "https://tommadness.github.io")
+            policy.WithOrigins("https://dohwacorp.github.io", "https://tommadness.github.io")
                 .WithMethods("GET")
                 .AllowAnyHeader();
         });
